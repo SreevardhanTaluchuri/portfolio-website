@@ -1,18 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Allura&family=Alumni+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&display=swap");
+.HeroWrapper .MobileView {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .HeroWrapper .MobileView {
+    display: block;
+  }
+}
 .HeroWrapper .HeroContainer {
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.99);
+}
+@media screen and (max-width: 768px) {
+  .HeroWrapper .HeroContainer {
+    display: none;
+  }
 }
 .HeroWrapper .HeroContainer .IntroContainer {
   position: fixed;
   top: 20%;
   left: 18%;
 }
-.HeroWrapper .HeroContainer .IntroContainer .TextWhite {
+.HeroWrapper .HeroContainer .IntroContainer .Link {
+  text-decoration: none;
+}
+.HeroWrapper .HeroContainer .IntroContainer .Link .TextWhite {
   cursor: pointer;
   width: 45%;
-  font-size: 133px;
+  font-size: min(12vw, 133px);
   letter-spacing: -2px;
   line-height: 110%;
   color: #faf8f9;
@@ -20,10 +36,10 @@
   margin: 0;
   text-align: start;
 }
-.HeroWrapper .HeroContainer .IntroContainer .TextRed {
+.HeroWrapper .HeroContainer .IntroContainer .Link .TextRed {
   cursor: pointer;
   width: 45%;
-  font-size: 133px;
+  font-size: min(12vw, 133px);
   letter-spacing: -2px;
   line-height: 110%;
   color: #ea0f1e;
@@ -31,6 +47,47 @@
   margin: 0;
   text-align: start;
 }
-.HeroWrapper .HeroContainer .IntroContainer .TextRed:nth-child(2) {
+.HeroWrapper .HeroContainer .IntroContainer .Link .TextRed:nth-child(2) {
   width: 300px;
+}
+.HeroWrapper .HeroContainer .IntroContainer .Link .TextRed:nth-child(1) {
+  width: 300px;
+}
+
+.MobileViewContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.99);
+}
+.MobileViewContainer .MobileInfoContainer {
+  margin: 280px 0 0 70px;
+}
+.MobileViewContainer .MobileInfoContainer .Link {
+  text-decoration: none;
+}
+.MobileViewContainer .MobileInfoContainer .Link .MobileTextWhite {
+  cursor: pointer;
+  width: 45%;
+  font-size: 12vw;
+  letter-spacing: -2px;
+  line-height: 110%;
+  color: #faf8f9;
+  font-family: "Lora Semibold";
+  margin: 0;
+  text-align: start;
+}
+.MobileViewContainer .MobileInfoContainer .Link .MobileTextRed {
+  cursor: pointer;
+  width: 45%;
+  font-size: 12vw;
+  letter-spacing: -2px;
+  line-height: 110%;
+  color: #ea0f1e;
+  font-family: "Lora Semibold";
+  margin: 0;
+  text-align: start;
+  margin: 20px 0 20px 0;
 }/*# sourceMappingURL=Hero.css.map */

@@ -1,48 +1,48 @@
 .HeroWrapper {
-    .MobileView {
-        display: none;
-        // @media screen and (max-width: 768px) {
-        //     display: block;
-        // }
-    }
-    .HeroContainer {
-        // @media screen and (max-width: 768px) {
-        //     display: none;
-        // }
+ .MobileView {
+  display: none;
+  // @media screen and (max-width: 768px) {
+  //     display: block;
+  // }
+ }
+ .HeroContainer {
+  // @media screen and (max-width: 768px) {
+  //     display: none;
+  // }
 
-        height: 100vh;
-        width: 100vw;
-        background-color: rgba(0, 0, 0, 0.99);
-        .IntroContainer {
-            position: fixed;
-            top: 20%;
-            left: 18%;
-            .Link {
-                text-decoration: none;
-            }
-        }
-    }
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.99);
+  .IntroContainer {
+   position: fixed;
+   top: 20%;
+   left: 18%;
+   .Link {
+    text-decoration: none;
+   }
+  }
+ }
 }
 
 .MobileViewContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.99);
-    .MobileInfoContainer {
-        margin: 280px 0 0 70px;
+ position: fixed;
+ top: 0;
+ left: 0;
+ height: 100vh;
+ width: 100vw;
+ background-color: rgba(0, 0, 0, 0.99);
+ .MobileInfoContainer {
+  margin: 280px 0 0 70px;
 
-        .Link {
-            text-decoration: none;
-            .MobileTextWhite {
-                @include text(#faf8f9, 12vw);
-            }
-            .MobileTextRed {
-                @include text(#ea0f1e, 12vw);
-                margin: 20px 0 20px 0;
-            }
-        }
-    }
+  .Link {
+   text-decoration: none;
+   .MobileTextWhite {
+    // @include text(#faf8f9, 12vw);
+   }
+   .MobileTextRed {
+    // @include text(#ea0f1e, 12vw);
+    margin: 20px 0 20px 0;
+   }
+  }
+ }
 }

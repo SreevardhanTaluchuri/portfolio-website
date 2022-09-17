@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { animated, useSpring } from 'react-spring';
-import "./Text.css";
+import "./Text.scss";
 
 const Text = ({ init, hover, color }) => {
  const [isHovered, setIsHovered] = useState(false);

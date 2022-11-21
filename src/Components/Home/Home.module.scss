@@ -1,0 +1,13 @@
+.HomeContainer {
+ position: fixed;
+ top: 10%;
+ right: 10%;
+ .Link {
+  text-decoration: none;
+  .Home {
+   font-family: "Lora Semibold";
+   color: #faf8f9;
+   font-size: 24px;
+  }
+ }
+}

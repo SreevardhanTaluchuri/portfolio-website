@@ -1,0 +1,56 @@
+.ContactWrapper {
+ height: 100%;
+ width: 100%;
+ background-color: rgba(0, 0, 0, 0.99);
+ .ContactContainer {
+  padding: 25vh 0 0 0;
+  vertical-align: baseline;
+  max-width: 68%;
+  margin: 0 auto;
+  .HeadingContainer {
+   .Heading {
+    display: flex;
+    flex-direction: column;
+    color: #f8f9fa;
+    font-family: "Lora Semibold";
+    line-height: 140%;
+    font-size: 100px;
+   }
+  }
+
+  .ContentContainer {
+   max-width: 70%;
+   margin: 0 auto;
+
+   .Heading {
+    color: #f8f9fa;
+    font-family: "Lora Semibold";
+    line-height: 140%;
+    font-size: 48px;
+    font-size: 40px;
+    margin: 24vh 0 4vh 0;
+   }
+
+   .Text {
+    color: #f8f9fa;
+    line-height: 170%;
+    font-family: "Regular";
+    font-size: 18px;
+    padding-bottom: 3vh;
+   }
+   .SocialsContainer {
+    display: flex;
+    flex-direction: column;
+    .Social {
+     margin: 0;
+     cursor: pointer;
+     padding: 0 0 3vh 0;
+     color: #ea0f1e;
+     text-decoration: none;
+     font-family: "Medium";
+     font-size: 19px;
+    }
+   }
+  }
+ }
+}

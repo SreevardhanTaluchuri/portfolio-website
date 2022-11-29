@@ -29,10 +29,6 @@ const Hero = () => {
     return (
         <div className={styles.HeroWrapper}>
             <Container>
-                <div className={styles.MobileView}>
-                    <MobileView />
-                </div>
-
                 <div className={styles.HeroContainer}>
                     <div className={styles.IntroContainer}>
                         {data.map((item, index) => {
@@ -46,21 +42,6 @@ const Hero = () => {
                 </div>
             </Container>
         </div>
-    );
-};
-
-const MobileView = () => {
-    return (
-        <>
-            <div className={styles.MobileViewContainer}>
-                <div className={styles.MobileInfoContainer}>
-                    <p className={styles.MobileTextWhite}>Hello.</p>
-                    <p className={styles.MobileTextRed}>I am</p>
-                    <p className={styles.MobileTextRed}>Sreevardhan</p>
-                </div>
-                <div className={styles.MobileTap}>Tap anywhere!</div>
-            </div>
-        </>
     );
 };
 

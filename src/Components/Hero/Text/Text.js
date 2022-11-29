@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { animated, useSpring } from 'react-spring';
+import useWindowSize from '../../../hooks/useWindowSize';
 import "./Text.scss";
 
 const Text = ({ init, hover, color, size = "", font = "" }) => {
@@ -7,11 +8,14 @@ const Text = ({ init, hover, color, size = "", font = "" }) => {
  const { a } = useSpring({
   a: isHovered ? 80 : 0,
  });
+ const windowSize = useWindowSize();
  return (
   <animated.p
    onMouseEnter={() => {
-    setIsHovered(true);
-    console.log(isHovered);
+    if (windowSize.width > 768) {
+     setIsHovered(true);
+     console.log(isHovered);
+    }
    }}
    onMouseLeave={() => setIsHovered(false)}
    className="heroText"

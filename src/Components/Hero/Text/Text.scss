@@ -13,4 +13,8 @@
 
 .heroText {
  @include text(min(12vw, 133px));
+
+ @media screen and (max-width: 768px) {
+  font-size: 55px;
+ }
 }

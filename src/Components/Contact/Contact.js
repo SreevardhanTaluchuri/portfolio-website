@@ -30,7 +30,7 @@ const Contact = () => {
       Feel free to reach out through any platforms below:
      </p>
      <div className={styles.SocialsContainer}>
-      <p
+      <div
        onClick={(e) => {
         navigator.clipboard.writeText(email)
         setHoverText('email copied!')
@@ -44,7 +44,7 @@ const Contact = () => {
         color="ea0f1e"
         size="17px"
        />
-      </p>
+      </div>
       <a
        className={styles.Social}
        href='https://www.instagram.com/sreevardhan.110502/'

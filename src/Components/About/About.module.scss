@@ -28,7 +28,8 @@
     margin: clamp(50px, 15vh, 0px) 0 0 0px;
     font-family: "Lora Semibold";
     color: #faf8f9;
-    font-size: min(90px, 45px);
+    font-size: min(90px, 18vw);
+    @include mobile(45px);
 
     .HeadingRed {
      color: #ea0f1e;
@@ -65,7 +66,7 @@
     // font-family: 'Regular';
     font-size: 18px;
     margin-bottom: 3vh;
-    @include mobile(14px);
+    @include mobile(18px);
    }
    .Resume {
     color: #ea0f1e;

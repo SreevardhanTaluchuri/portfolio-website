@@ -4,6 +4,7 @@ import Text from './Text/Text'
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { animated, useSpring, config } from "react-spring";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const Hero = () => {
     const [data, setData] = useState([
@@ -28,7 +29,6 @@ const Hero = () => {
     ])
     const { x } = useSpring({
         from: { x: 0 }, x: 1,
-        // config: { mass: 5, tension: 280, friction: 100, duration: 1000 },
         config: { ...config.gentle, duration: 1100 },
         loop: true,
 
@@ -36,7 +36,6 @@ const Hero = () => {
     const changeData = () => {
         const updatedData = data.map((item) => {
             const init = item.init
-            let link = ""
             return {
                 ...item,
                 init: item.hover,
@@ -45,8 +44,18 @@ const Hero = () => {
         })
         setData(updatedData)
     }
+    const { width } = useWindowSize();
+    const mobileOptions = () => {
+        if (width < 768) {
+            if (data[0].init == 'Hello.' || data[0].init == 'About') {
+                changeData()
+            }
+        }
+    }
     return (
-        <div className={styles.HeroWrapper}>
+        <div
+            onClick={() => mobileOptions()}
+            className={styles.HeroWrapper}>
             <Container>
                 <div className={styles.HeroContainer}>
                     <div className={styles.IntroContainer}>
@@ -54,11 +63,14 @@ const Hero = () => {
                             return (
                                 <Link className={styles.Link} key={index}
                                     to={() => {
-                                        if (item.init == 'Hello.' || item.init == 'I am' || item.init == 'Sreevardhan')
-                                            return '/'
+                                        if (width < 768) {
+                                            if (item.init == 'Hello.' || item.init == 'I am' || item.init == 'Sreevardhan')
+                                                return '/'
+                                            else
+                                                return item.path
+                                        }
                                         else
                                             return item.path
-
                                     }}>
                                     <Text init={item.init} hover={item.hover} color={item.color} />
                                 </Link>
@@ -69,13 +81,11 @@ const Hero = () => {
                         style={{
                             transform: x.interpolate(
                                 [0, 0.25, 0.5, 0.75, 1],
-                                [0, -8, -16, -8, 0]).interpolate(x =>
+                                [0, -13, -16, -13, 0]).interpolate(x =>
                                     `translateY(${x}px)`)
                         }}
-                        // style={upstyles}
                         className={styles.MobileOptionsChange}>
                         <p
-                            onClick={() => changeData()}
                             className={styles.OptionChange}>
                             Tap anywhere</p>
                     </animated.div>

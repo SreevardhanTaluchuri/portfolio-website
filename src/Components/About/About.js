@@ -4,9 +4,10 @@ import Home from "../Home/Home";
 import { Container } from "react-bootstrap";
 import ScrollProgressBar from "../ScrollProgressBar/ScrollProgressBar";
 import Text from "../Hero/Text/Text";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const About = () => {
-
+    const { width } = useWindowSize();
     return (
         <>
             <div className={styles.AboutWrapper}>
@@ -58,7 +59,9 @@ const About = () => {
                                     init="My Resume"
                                     hover="My Resume"
                                     color="ea0f1e"
-                                    size="20px"
+                                    size={
+                                        width > 768 ? "20px" : "18px"
+                                    }
                                 />
                             </a>
                         </div>

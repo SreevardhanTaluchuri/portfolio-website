@@ -2,15 +2,20 @@ import React, { useState } from 'react'
 import styles from './Contact.module.scss'
 import Home from '../Home/Home'
 import Text from './../Hero/Text/Text'
+import useWindowSize from '../../hooks/useWindowSize'
 
 const Contact = () => {
  const [hoverText, setHoverText] = useState("copy to clipboard");
- const [clicked, setClicked] = useState(false);
  const emailDefault = "sreevardhan.t11@gmail.com";
  const [email, setEmail] = useState(emailDefault)
-
+ const { width } = useWindowSize();
  return (
-  <div className={styles.ContactWrapper}>
+  <div
+   onClick={() => {
+    if (width < 768 && email == "email copied!")
+     setEmail(emailDefault);
+   }}
+   className={styles.ContactWrapper}>
    <div className={styles.ContactContainer}>
     <Home />
     <div className={styles.HeadingContainer}>
@@ -32,6 +37,8 @@ const Contact = () => {
      <div className={styles.SocialsContainer}>
       <div
        onClick={(e) => {
+        if (width < 768)
+         setEmail("email copied!")
         navigator.clipboard.writeText(email)
         setHoverText('email copied!')
        }}
@@ -42,7 +49,7 @@ const Contact = () => {
         init={email}
         hover={hoverText}
         color="ea0f1e"
-        size="17px"
+        size={width > 768 ? "17px" : "19px"}
        />
       </div>
       <a
@@ -54,7 +61,7 @@ const Contact = () => {
         init="Instagram"
         hover="Instagram"
         color="ea0f1e"
-        size="17px"
+        size={width > 768 ? "17px" : "19px"}
        />
       </a>
       <a
@@ -66,7 +73,7 @@ const Contact = () => {
         init="Linkedin"
         hover="Linkedin"
         color="ea0f1e"
-        size="17px"
+        size={width > 768 ? "17px" : "19px"}
        />
       </a>
      </div>

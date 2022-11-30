@@ -1,3 +1,10 @@
+@mixin mobile($size, $width) {
+ @media screen and (max-width: 768px) {
+  font-size: $size;
+  max-width: $width;
+ }
+}
+
 .ContactWrapper {
  height: 100%;
  width: 100%;
@@ -6,6 +13,7 @@
   padding: 25vh 0 0 0;
   vertical-align: baseline;
   max-width: 68%;
+  @include mobile(none, 84%);
   margin: 0 auto;
   .HeadingContainer {
    .Heading {
@@ -15,13 +23,14 @@
     font-family: "Lora Semibold";
     line-height: 140%;
     font-size: 100px;
+    @include mobile(60px, inherit);
    }
   }
 
   .ContentContainer {
    max-width: 70%;
    margin: 0 auto;
-
+   @include mobile(inherit, 100%);
    .Heading {
     color: #f8f9fa;
     font-family: "Lora Semibold";
@@ -29,6 +38,7 @@
     font-size: 48px;
     font-size: 40px;
     margin: 24vh 0 4vh 0;
+    @include mobile(30px, inherit);
    }
 
    .Text {

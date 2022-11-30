@@ -19,7 +19,7 @@ const Home = () => {
      }}
      onMouseEnter={() => setIsBackHovered((prevState) => !prevState)}
      onMouseLeave={() => setIsBackHovered((prevState) => !prevState)}
-     className={styles.Home}>{backHovered ? "wanna go back?" : "back"}
+     className={styles.Home}>{backHovered ? "wanna go back?" : "back."}
     </animated.p>
    </Link>
   </div>

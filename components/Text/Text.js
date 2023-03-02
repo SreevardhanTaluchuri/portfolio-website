@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { animated, useSpring } from 'react-spring';
-import useWindowSize from '../../../hooks/useWindowSize';
-import "./Text.scss";
+import useWindowSize from '../../hooks/useWindowSize';
+import styles from "./Text.module.scss";
 
 const Text = ({ init, hover, color, size = "", font = "" }) => {
  const [isHovered, setIsHovered] = useState(false);
@@ -18,7 +18,7 @@ const Text = ({ init, hover, color, size = "", font = "" }) => {
     }
    }}
    onMouseLeave={() => setIsHovered(false)}
-   className="heroText"
+   className={styles.heroText}
    style={{
     color: `#${color}`,
     transform: a.to(

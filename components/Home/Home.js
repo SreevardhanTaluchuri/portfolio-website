@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from "./Home.module.scss"
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { animated, useSpring } from 'react-spring';
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
  });
  return (
   <div className={styles.HomeContainer}>
-   <Link className={styles.Link} to="/">
+   <Link className={styles.Link} href="/">
     <animated.p
      style={{
       transform: a.to(

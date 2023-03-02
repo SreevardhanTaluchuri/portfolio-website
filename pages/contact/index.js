@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import styles from './Contact.module.scss'
-import Home from '../Home/Home'
-import Text from './../Hero/Text/Text'
+import styles from './contact.module.scss'
+import Home from '../../components/Home/Home'
+import Text from '../../components/Text/Text'
 import useWindowSize from '../../hooks/useWindowSize'
 
-const Contact = () => {
+const index = () => {
  const [hoverText, setHoverText] = useState("copy to clipboard");
  const emailDefault = "sreevardhan.t11@gmail.com";
  const [email, setEmail] = useState(emailDefault)
@@ -83,4 +83,4 @@ const Contact = () => {
  )
 }
 
-export default Contact
+export default index
